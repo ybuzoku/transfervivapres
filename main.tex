@@ -1,0 +1,435 @@
+\documentclass{beamer}
+\usetheme{ucl}
+
+\input{package}
+\input{macro}
+
+
+\setbeamersize{description width=2em}
+%%% Remove nav symbols (and shift any logo down to corner)
+\setbeamertemplate{navigation symbols}{\vspace{-2ex}}
+\setbeamertemplate{footline}[author title date]
+\setbeamercolor{banner}{bg=darkpurple}
+\useinnertheme{blockborder}
+
+\graphicspath{{./images/} }
+\title[P-tS for ILL]{Transfer viva: \newline Proof-theoretic Semantics for ILL and beyond}
+%\author{\texorpdfstring{Yll Buzoku\newline\url{y.buzoku@ucl.ac.uk}}{https://www.homepages.ucl.ac.uk/~zcapybu/}}
+\author{Yll Buzoku}
+\institute[UCL]{%
+  Department of Computer Science \\ %
+  University College London
+}
+\date{May 30, 2024}
+
+%%%%% Uncomment the bottom 7 lines to introduce between ToC between sections
+%\AtBeginSection[]
+%{
+%  \begin{frame}
+%    \frametitle{Presentation root directory}
+%    \tableofcontents[currentsection]
+%  \end{frame}
+%}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\titlepage
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Goals for this presentation}
+\begin{frame}{Goals for this talk}
+\begin{itemize}
+\item To cover what work I have already done in the direction obtaining a BeS for IMALL.
+\item To cover some issues with the current approach to dealing with the modality of ILL.
+\item To discuss a (currently promising) approach to dealing with the modality of ILL.
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{A natural deduction system for IMALL}
+\begin{center}
+\noindent\begin{minipage}{0.47\textwidth}\scriptsize
+\begin{prooftree}
+  \def\ScoreOverhang{0.5pt}
+  	\AxiomC{}
+  	\RightLabel{Ax}
+  	\UnaryInfC{$\varphi\proves\varphi$}
+\end{prooftree}
+\end{minipage}
+\vspace{2pt}
+\noindent\begin{minipage}{0.47\textwidth}\scriptsize
+	\begin{prooftree}
+  	\def\ScoreOverhang{0.5pt}
+  		\AxiomC{$\Gamma,\varphi \proves \psi$}
+  		\RightLabel{$\mto$-I}
+  		\UnaryInfC{$\Gamma \proves \varphi \mto \psi$}
+	\end{prooftree}
+	\begin{prooftree}
+	\def\ScoreOverhang{0.5pt}
+		\AxiomC{$\Gamma \proves \varphi$}
+		\AxiomC{$\Delta \proves \psi$}
+		\RightLabel{$\mand$-I}
+		\BinaryInfC{$\Gamma,\Delta \proves \varphi\mand\psi$}
+	\end{prooftree}
+	\begin{prooftree}
+	\def\ScoreOverhang{0.5pt}
+		\AxiomC{}
+		\RightLabel{$\mtop$-I}
+		\UnaryInfC{$\proves \mtop$}
+	\end{prooftree}
+	\begin{prooftree}
+	\def\ScoreOverhang{0.5pt}
+		\AxiomC{$\Gamma^{\gamma} \proves \varphi$}
+		\AxiomC{$\Gamma^{\gamma} \proves \psi$}
+		\RightLabel{$\aand$-I}
+		\BinaryInfC{$\Gamma \proves \varphi \aand \psi$}
+	\end{prooftree}
+	\begin{prooftree}
+	\def\ScoreOverhang{0.5pt}
+		\AxiomC{$\Gamma \proves \varphi_i$}
+		\RightLabel{$\aor$-$\text{I}_i$}
+		\UnaryInfC{$\Gamma \proves \varphi_0 \aor \varphi_1$}
+	\end{prooftree}
+	\begin{prooftree}
+	\def\ScoreOverhang{0.5pt}
+		\AxiomC{No $\abot$ intro rule}
+	\end{prooftree}
+\end{minipage}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{minipage}{0.47\textwidth}\scriptsize
+	\begin{prooftree}
+  	\def\ScoreOverhang{0.5pt}
+  		\AxiomC{$\Gamma \proves \varphi \mto \psi$}
+  		\AxiomC{$\Delta \proves \varphi$}
+  		\RightLabel{$\mto$-E}
+  		\BinaryInfC{$\Gamma,\Delta \proves \psi$}
+	\end{prooftree}
+	\begin{prooftree}
+	\def\ScoreOverhang{0.5pt}
+		\AxiomC{$\Gamma \proves \varphi\mand\psi$}
+		\AxiomC{$\Delta, \varphi, \psi \proves \chi$}
+		\RightLabel{$\mand$-E}
+		\BinaryInfC{$\Gamma, \Delta \proves \chi$}
+	\end{prooftree}
+	\begin{prooftree}
+	\def\ScoreOverhang{0.5pt}
+		\AxiomC{$\Gamma \proves \varphi$}
+		\AxiomC{$\Delta \proves \mtop$}
+		\RightLabel{$\mtop$-E}
+		\BinaryInfC{$\Gamma,\Delta \proves \varphi$}
+	\end{prooftree}
+	\begin{prooftree}
+	\def\ScoreOverhang{0.5pt}
+		\AxiomC{$\Gamma \proves \varphi_0 \aand \varphi_1$}
+		\RightLabel{$\aand$-$\text{E}_i$}
+		\UnaryInfC{$\Gamma \proves \varphi_i$}
+	\end{prooftree}
+	\begin{prooftree}
+	\def\ScoreOverhang{0.5pt}
+		\AxiomC{$\Gamma \proves \varphi \aor \psi$}
+		\AxiomC{$\Delta^{\gamma},\varphi \proves \chi$}
+		\AxiomC{$\Delta^{\gamma},\psi \proves \chi$}
+		\RightLabel{$\aor$-E}
+		\TrinaryInfC{$\Gamma, \Delta \proves \chi$}
+	\end{prooftree}
+	\begin{prooftree}
+	\def\ScoreOverhang{0.5pt}
+		\AxiomC{$\Gamma \proves \abot$}
+		\RightLabel{$\abot$-E}
+		\UnaryInfC{$\Gamma \proves \varphi$}
+	\end{prooftree}
+\end{minipage}
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Approaching substructurality in Base-extention Semantics}
+\begin{frame}
+\begin{definition}{Atomic rules}
+Basic rules take the following form: 
+\[\openaddrule (\at{P}_{1_i} \seq \at{q}_{1_i})\closeaddrule^{l_1}_{i=1}, \dots, \openaddrule (\at{P}_{n_i} \seq \at{q}_{n_i})\closeaddrule^{l_n}_{i=1} \Rightarrow \at{r}\]
+where 
+\begin{itemize}
+\item Each $P_i$ is an atomic multiset, called a premiss multiset.
+\item Each $q_i$ and $r$ is an atomic proposition.
+\item Each $(P_i \seq q_i)$ is a pair $(P_i, q_i)$ called an atomic sequent.
+\item Each collection $\openaddrule (\at{P}_{i_1} \seq \at{q}_{i_1}), \dots, (\at{P}_{i_{l_i}} \seq \at{q}_{i_{l_i}})\closeaddrule$ is called an atomic box.
+    \end{itemize}
+\end{definition}
+Basic rules are defined as before except now they are not allowed to take take the values $\mtop$ or $\abot$.
+%\pause
+%\emph{Given derivations of $q_{i_j}$ from $P_{i_j}$ relative to some multisets $C_i$ one infers $r$ relative to all $C_i$, discharging from the derivations in question, the premiss atomic multisets $P_{i_j}$.} 
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\begin{definition}[Basic derivability relation]
+The relation of derivability in a base $\baseB$, is defined inductively as so:
+\begin{itemize}
+\item[Ref] $p \deriveBaseM{\baseB} p$
+\item[App] Given that $(\openaddrule(\at{P}_{1_i} \seq \at{q}_{1_{i}})\Closeaddrule{i=1}{l_1},\dots,\openaddrule(\at{P}_{n_i} \seq \at{q}_{n_{i}}) \Closeaddrule{i=1}{l_n} \Rightarrow \at{r}) \in \baseB$ and atomic multisets $\at{C}_i$ such that the following hold:
+        \[\at{C}_i, \at{P}_{i_j} \deriveBaseM{\baseB} \at{q}_{i_j} \text{ for all } i = 1,\dots, n \text{ and } j = 1,\dots,l_i\]
+Then $\at{C}_{1},\dots,\at{C}_{n}\deriveBaseM{\baseB} r$. 
+\end{itemize}
+\end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Base-extension Semantics for IMALL}
+\begin{frame}{Base-extension Semantics for IMALL}
+\begin{center}
+\begin{itemize}
+\item[(At)] $\suppM{\baseB}{\at{L}} \at{p}$ iff $\at{L} \deriveBaseM{\baseB} \at{p}$. 
+\item[($\mand$)] 
+        $\suppM{\baseB}{\at{L}} \varphi \mand \psi$ iff for every $\baseC \baseGeq \baseB$, atomic multiset $\at{K}$, and atom $\at{p}$, if $\varphi\fatcomma\psi\suppM{\baseC}{\at{K}} \at{p}$ then $\suppM{\baseC}{\at{L},\at{K}} \at{p}$. 
+        % 
+\item[($\mtop$)] $\suppM{\baseB}{\at{L}} \mtop$ iff for every $\baseC \baseGeq \baseB$, atomic multiset $\at{K}$, and atom $\at{p}$, if $\suppM{\baseC}{\at{K}} \at{p}$, then $\suppM{\baseC}{\at{L},\at{K}} \at{p}$. 
+        % 
+\item[($\mto$)] $\suppM{\baseB}{\at{L}} \varphi \mto \psi$ iff $\varphi \suppM{\baseB}{\at{L}} \psi$. 
+        % 
+\item[($\aand$)] $\suppM{\baseB}{\at{L}} \varphi \aand \psi$ iff $\suppM{\baseB}{\at{L}} \varphi$ and $\suppM{\baseB}{\at{L}} \psi$. 
+        %
+\item[($\aor$)] 
+        $\suppM{\baseB}{\at{L}} \varphi \aor \psi$ iff for every $\baseC \baseGeq \baseB$, atom $\at{p}$ and atomic multiset $\at{K}$ such that $\varphi \suppM{\baseC}{\at{K}} \at{p}$ and $\psi \suppM{\baseC}{\at{K}} \at{p}$ hold, then $\suppM{\baseC}{\at{L},\at{K}} \at{p}$. 
+        %
+\item[($\abot$)] $\suppM{\baseB}{\at{L}} \abot$ iff $\suppM{\baseB}{\at{L}} \at{p}$, for all atomic $\at{p}$.
+        %
+\item[($\fatcomma$)] $\suppM{\baseB}{\at{L}}\Gamma\fatcomma\Delta$ iff there are atomic multisets $\at{U}$ and $\at{V}$ such that $\at{L}=\at{K}\fatcomma\at{M}$ and that $\suppM{\baseB}{\at{K}}\Gamma$ and $\suppM{\baseB}{\at{M}}\Delta$.
+        %
+\item[(Inf)] For $\Theta$ a nonempty multiset: $\Theta \suppM{\baseB}{\at{L}}\varphi$ iff for all $\baseC \baseGeq \baseB$, atomic multisets $\at{K}$ and atoms $\at{p}$ if $\suppM{\baseC}{\at{K}}\Theta$ then $\suppM{\baseC}{\at{L},\at{K}}\varphi$.
+\end{itemize}
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Including the exponential}
+\begin{frame}{What of the exponential?}
+The exponential behaves very weirdly! Consider the rules in the sequent calculus:
+
+\noindent\begin{minipage}{0.20\textwidth}\scriptsize
+  \begin{prooftree}
+  \def\ScoreOverhang{1pt}
+  	\AxiomC{$\Gamma, \varphi \supset \psi$}
+  	\RightLabel{$\bang$-d}
+  	\UnaryInfC{$\Gamma,\bang\varphi \supset \psi$}
+  \end{prooftree}
+\end{minipage}
+\begin{minipage}{0.20\textwidth}\scriptsize
+  \begin{prooftree}
+  \def\ScoreOverhang{1pt}
+  	\AxiomC{$\Gamma,\bang\varphi,\bang\varphi \supset \psi$}
+  	\RightLabel{$\bang$-c}
+  	\UnaryInfC{$\Gamma,\bang\varphi \supset \psi$}
+  \end{prooftree}
+\end{minipage}
+\begin{minipage}{0.20\textwidth}\scriptsize
+   \begin{prooftree}
+  \def\ScoreOverhang{1pt}
+  	\AxiomC{$\bang\Gamma \supset\varphi$}
+  	\RightLabel{$\bang$-r}
+  	\UnaryInfC{$\bang\Gamma \supset \bang \varphi$}
+  \end{prooftree}
+\end{minipage}
+\begin{minipage}{0.20\textwidth}\scriptsize
+  \begin{prooftree}
+  \def\ScoreOverhang{1pt}
+  	\AxiomC{$\Gamma\supset\psi$}
+  	\RightLabel{$\bang$-w}
+  	\UnaryInfC{$\Gamma,\bang\varphi \supset \psi$}
+  \end{prooftree}
+\end{minipage}
+\newline
+\begin{itemize}
+\item All "structural" aspects of the exponential are on the \emph{left} hand side.
+\item The exponential right rule, still depends fully on the structure of the left hand side.
+\item None of these rules are invertible, so none are particularly nice candidates for giving a definition. 
+\end{itemize}
+However, this means that to pinpoint the behaviour of the exponential, we need to pinpoint something about the resources which can be used to support it! 
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{What of the exponential?}
+\begin{itemize}
+\item The only known good natural deduction system for ILL has an introduction rule for the exponential which is closer to being a necessitation rule.
+\item In this system, \emph{all} connectives have generalised elimination rules.
+\end{itemize}
+\begin{prooftree}
+\AxiomC{$(\bang\varphi)^m,\Gamma \proves \chi$}
+\AxiomC{$\Delta_1 \proves \bang\psi_1 \dots \Delta_n \proves \bang\psi_n $}
+\AxiomC{$\bang\psi_1,\dots,\bang\psi_n \proves \varphi$}
+\RightLabel{$\bang$-I}
+\TrinaryInfC{$\Gamma,\Delta_1,\dots\Delta_n\proves\chi$}
+\end{prooftree}
+\begin{prooftree}
+\AxiomC{$\Gamma\proves\bang\varphi$}
+\AxiomC{$\Delta,\varphi \proves \psi$}
+\RightLabel{$\bang$-E}
+\BinaryInfC{$\Gamma,\Delta\proves\psi$}
+\end{prooftree}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Weakening and Contraction derivability}
+\begin{proof}
+It follows immediately by setting $n=1$ and $m=2$ for contraction and $m=0$ for weakening in the introduction rule, $\psi = \varphi$ and $\Delta = \bang \varphi$ that 
+\begin{prooftree}
+\AxiomC{$(\bang\varphi)^m, \Gamma \proves \chi$}
+\AxiomC{$\bang\varphi \proves \bang\varphi$}
+\AxiomC{$\bang\varphi \proves \bang\varphi$}
+\AxiomC{$\varphi \proves \varphi$}
+\RightLabel{$\bang$E}
+\BinaryInfC{$\bang\varphi \proves \varphi$}
+\RightLabel{$\bang$I}
+\TrinaryInfC{$\Gamma,\bang \varphi\proves\chi$}
+\end{prooftree}
+\end{proof}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Expanding what we know}
+\begin{center}
+\begin{align*}
+&\bang\varphi \suppM{}{} \varphi \mand \ldots \mand \varphi \text{ iff } \\
+&\text{ for all bases } \baseB \text{ and atomic multisets } \at{L} \text{, such that } \suppM{\baseB}{\at{L}} \bang\varphi \text{ then } \\ 
+&\suppM{\baseB}{\at{L}} \varphi \mand \ldots \mand \varphi
+\end{align*}
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Expanding what we know}
+\begin{center}
+\begin{itemize}
+\item So when does $\suppM{\baseB}{\at{L}} \varphi \mand \ldots \mand \varphi$ hold?
+\end{itemize}
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Expanding what we know}
+\begin{center}
+Considering the case when $\varphi = \at{p}$ for simplicity we get the following:
+\begin{itemize}
+\pause
+\item Given a base $\baseB$ such that $\deriveBaseM{\baseB}\at{p}$ and $\at{L}=\emptymultiset$.
+\pause
+\item Then we have that $\suppM{\baseB}{\at{L}}\at{p} \mand \ldots \mand \at{p}$.
+\pause
+\item Examples of such bases:
+\begin{itemize}
+	\item $\baseB = \{\emptymultiset \Rightarrow \at{p}\}$
+	\item $\baseB = \{\emptymultiset \Rightarrow \at{q},\, \at{q}\Rightarrow \at{p} \}$
+\end{itemize}
+\pause
+\end{itemize} 
+\vspace{10pt}
+Note that if $L \neq \emptymultiset$ then the only way that this relation could hold is if the atoms were derivable from within the base, i.e. if were valid $\suppM{\baseB}{}L$.
+
+So by cut, $\suppM{\baseB}{}p\mand \ldots \mand p$. 
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Expanding what we know}
+\begin{center}
+\noindent
+\emph{The meaning of $\suppM{\baseB}{\at{L}}\bang \varphi$ should imply that $\suppM{\baseB}{\emptymultiset}\varphi$.}
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Exploring the suggestion}
+\begin{itemize}
+\item Cannot demand that $\deriveBaseM{\baseB}\varphi$. 
+\pause
+\item It also says that $\bang \varphi$ is derivable from axioms in the base, which corresponds to the view of $\bang\varphi$ given by Girard. %\cite{girard_1995}.
+\pause
+\item The most convincing hypothesis was that $\suppM{\baseB}{\at{L}}\bang\varphi$ iff $\at{L} = \emptymultiset$ and for all $\baseC \baseGeq \baseB$, atomic multisets $K$ and atoms $p$, if $\varphi\suppM{\baseC}{K}p$ then $\suppM{\baseC}{K}p$.
+\pause
+\item This however fails to be complete as it requires us to be able to prove from $L \deriveBaseM{\baseB} \flatIMALL{(\bang \varphi)}$ that $L = \emptymultiset$, to pass the $\dagger$ lemma.
+\pause
+\item Add a side condition? 
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Generalisations of the suggestion}
+\begin{itemize}
+\item Attempts to generalise this by replacing $L=\emptymultiset$ with $\suppM{\baseB}{\emptymultiset}L$ fail for the same reason.
+\vspace{0.15cm}
+\item Attempts at sidestepping this by adding $\suppM{\baseB}{\emptymultiset}L$ as the hypothesis of a conditional similarly fail.
+\vspace{0.15cm}
+\item A different attempt, based on a notion of closure was to define $\suppM{\baseB}{L}\bang \varphi$ iff for every $K, p$ and $\baseC \baseGeq \baseB$ if we have $\varphi\suppM{\baseC}{K}p$ then $\suppM{\baseC}{L,K}p$ and $\Quinequote{\forall}M(\suppM{\baseB}{M}\varphi\, \Quinequote{\Rightarrow}\suppM{\baseB}{\emptymultiset}M)$ also fails as there is no way to prove the conclusion of the second conditional.
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Possible alternative approach}
+\begin{center}
+\begin{itemize}
+\item We want to re-introduce, in a controlled manner, the ability for normal intuitionistic inferences to be held valid. 
+\pause
+\item Not absurd to distinguish basic sentences based on whether they are to be used as a hypothesis in an intuitionistic or a resourceful way. 
+\pause
+\item The distinction \emph{must} however be made by the formula consequence relation.
+\pause
+\item Thus a basic rule might look something like the following:
+\begin{prooftree}
+\AxiomC{$[P_1;C_1]$}
+\noLine
+\UnaryInfC{$\vdots$}
+\noLine
+\UnaryInfC{$q_1$}
+\AxiomC{$\dots$}
+\AxiomC{$[P_n;C_n]$}
+\noLine
+\UnaryInfC{$\vdots$}
+\noLine
+\UnaryInfC{$q_n$}
+\RightLabel{$\mathcal{R}$}
+\TrinaryInfC{$r$}
+\end{prooftree}
+\end{itemize}
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Exploring the alternative approach}
+	\begin{definition}[Extended basic derivability relation]
+		The relation of derivability in a base $\baseB$, is defined inductively as so:
+		\begin{itemize}
+		\item[Ref] $S;T \deriveBaseM{\baseB} p$ iff ($p \in S$ and $T=\emptymultiset$) or $T=[p]$.
+		\item[App] Given that $(\openaddrule(P_{1_i};C_{1_i} \seq q_{1_{i}})\Closeaddrule{i=1}{l_1},\dots,\openaddrule(P_{n_i};C_{n_i} \seq q_{n_{i}}) \Closeaddrule{i=1}{l_n} \Rightarrow \at{r}) \in \baseB$ and atomic multisets $G$ and $\at{C}_i$ such that the following hold:
+				\[F,P_{i_j};L_i, C_{i_j} \deriveBaseM{\baseB} \at{q}_{i_j} \text{ for all } i = 1,\dots, n \text{ and } j = 1,\dots,l_i\]
+		Then $F;L_{1},\dots,L_{n}\deriveBaseM{\baseB} r$. 
+		\end{itemize}
+	\end{definition}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Exploring the alternative approach}
+\begin{itemize}
+\item $\suppM{\baseB}{F;L}p$ iff $F;L\deriveBaseM{\baseB}p$
+\vspace{0.3cm}
+\item $\suppM{\baseB}{F;L}\Gamma\fatcomma\Delta$ iff there exists $L=U\fatcomma V$ such that $\suppM{\baseB}{F;U}\Gamma$ and $\suppM{\baseB}{F;V}\Delta$
+\pause
+\vspace{0.3cm}
+\item Perhaps something like this: \newline
+$\suppM{\baseB}{F;\cdot}\bang \varphi$ iff for all $\baseC \baseGeq \baseB$, atomic multisets $L,K$ and atoms $p$, if $\varphi\suppM{\baseC}{L;K}p$ then $\suppM{\baseC}{F,L;K}p$ 
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Exploring the alternative approach}
+\begin{itemize}
+\item This approach seems to provide a nice generalisation.
+\vspace{0.3cm}
+\item Unknown if the atomic system is sufficiently well behaved yet.
+\vspace{0.3cm}
+\item Seems to suggest a want for a Lolli-like encoding of sequents i.e. $(\bang \Gamma, \Delta: \varphi) \mapsto \Gamma;\Delta \Vdash \varphi$, as it is still difficult to encode the $\bang$I rule.
+\vspace{0.3cm}
+\item Change to a ND system with explicit structurality or a ND-like system with no explicit structural rules?
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Thank you!}
+\begin{center}
+Thank you for listening!
+\end{center}
+\end{frame}
+\end{document}

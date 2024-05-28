@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%% Define the new environments here;
+%\newenvironment{qparts}{\begin{enumerate}[{(}a{)}]}{\end{enumerate}}
+% \def\endproofmark{$\Box$}
+%\renewenvironment{proof}{\par{\bf Proof}:}{\hfill$\blacksquare$}
+
+\newtheorem{defn}[theorem]{Definition}
+
+\newtheorem{question}[theorem]{Question}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{observation}[theorem]{Observation}
+
+%Make font sans-serif
+\renewcommand{\familydefault}{\sfdefault}
+
+%%%%%% Define commands here;
+
+% Basic logic notation.
+%\newcommand{\seq}{\triangleright}
+\newcommand{\seq}{\rightsquigarrow }
+\newcommand{\sequent}[2]{{#1} \seq {#2}}
+\newcommand{\thmSequent}[2]{{#1} \vdash {#2}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       BeS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\base}[1]{\mathscr{#1}}
+\newcommand{\baseB}{\base{B}}
+\newcommand{\baseC}{\base{C}}
+\newcommand{\baseD}{\base{D}}
+\newcommand{\baseE}{\base{E}}
+\newcommand{\baseF}{\base{F}}
+\newcommand{\baseG}{\base{G}}
+\newcommand{\baseH}{\base{H}}
+\newcommand{\baseX}{\base{X}}
+\newcommand{\baseY}{\base{Y}}
+\newcommand{\baseZ}{\base{Z}}
+\newcommand{\baseIMALL}{\base{N}}
+\newcommand{\emptybase}{\varnothing}
+\newcommand{\basis}[1]{\mathfrak{#1}}
+% \newcommand{\at}[1]{\mathrm{#1}}
+\newcommand{\at}[1]{{#1}}
+\newcommand{\At}{\mathrm{At}}
+
+%\newcommand{\baseGeq}{\succeq}
+%\newcommand{\baseLeq}{\preceq}
+\newcommand{\baseGeq}{\supseteq}
+\newcommand{\baseLeq}{\subseteq}
+
+\newcommand{\suppTor}[1]{\Vdash_{\!\!#1}}
+% \newcommand{\supp}[1]{\Vdash_{\!\!#1}}
+% \newcommand{\suppNew}[1]{\vDash_{\!#1}}
+\newcommand{\suppNew}[1]{\Vdash^{*}_{\!#1}}
+\newcommand{\entails}{\Vdash}
+%\newcommand{\proves}[1]{\vdash_{\!\!#1}}
+\newcommand{\proves}{\vdash}
+\newcommand{\plus}{+}
+\newcommand{\system}[1]{\mathsf{#1}}
+\newcommand{\Atoms}{\set{A}}
+\newcommand{\Formulas}{\set{F}}
+\newcommand{\Bunches}{\set{B}}
+\newcommand{\set}[1]{\mathbb{#1}}
+
+
+% ILL
+\newcommand{\IPL}{IPL}
+\newcommand{\IMLL}{IMLL}
+\newcommand{\IMALL}{IMALL}
+\newcommand{\ILL}{ILL}
+\newcommand{\provesIMALL}{\vdash_{\mathrm{IMALL}}}
+\newcommand{\provesILL}{\vdash_{\mathrm{ILL}}}
+\newcommand{\multiset}{\mathcal{M}}
+\newcommand{\fmultiset}{\mathcal{M}_{\!{f}}}
+\newcommand{\emptymultiset}{\varnothing}
+\newcommand{\deriveBaseM}[1]{\vdash_{\!\!#1}}
+\newcommand{\suppM}[2]{\Vdash_{ \!\!#1 }^{ \!\!#2 }}
+\newcommand{\suppMAlt}[2]{\Vvdash_{ \!\!#1 }^{ \!\!#2 }}
+\newcommand{\IMALLformula}{\mathsf{Form}}
+\newcommand{\mand}{\otimes}
+\newcommand{\mtop}{1}
+\newcommand{\mto}{\multimap}
+\newcommand{\aand}{\with}
+\newcommand{\aor}{\oplus}
+\newcommand{\abot}{0}
+\newcommand{\msetunion}{,}
+\newcommand{\bang}{\mathop{!}}
+\newcommand{\makeMultiset}[1]{[#1]}
+\newcommand{\flatIMALL}[1]{{#1}^{\flat}}
+\newcommand{\deflatIMALL}[1]{{#1}^{\natural}}
+\newcommand{\openaddrule}{\{}
+\newcommand{\closeaddrule}{\}}
+\newcommand{\Closeaddrule}[2]{\}^{#2}_{#1}}
+\newcommand{\extAt}{\widetilde{\At}}
+\DeclareMathSymbol{\fatcomma}{\mathrel}{bbold}{\lq\,}
+
+%Misc
+\newbox\qqBoxA
+\newdimen\qqCornerHgt
+\setbox\qqBoxA=\hbox{$\ulcorner$}
+\global\qqCornerHgt=\ht\qqBoxA
+\newdimen\qqArgHgt
+\def\Quinequote #1{%
+    \setbox\qqBoxA=\hbox{$#1$}%
+    \qqArgHgt=\ht\qqBoxA%
+    \ifnum     \qqArgHgt<\qqCornerHgt \qqArgHgt=0pt%
+    \else \advance \qqArgHgt by -\qqCornerHgt%
+    \fi \raise\qqArgHgt\hbox{$\ulcorner$} \box\qqBoxA %
+    \raise\qqArgHgt\hbox{$\urcorner$}}
