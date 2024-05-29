@@ -10,6 +10,14 @@
 \newtheorem{construction}[theorem]{Construction}
 \newtheorem{observation}[theorem]{Observation}
 
+% Table thing 
+\makeatletter
+\def\labelandtag#1#2{\begingroup
+   \def\@currentlabel{#2}%
+   \phantomsection\label{#1}\endgroup
+}
+\makeatother
+
 %Make font sans-serif
 \renewcommand{\familydefault}{\sfdefault}
 
@@ -17,7 +25,7 @@
 
 % Basic logic notation.
 %\newcommand{\seq}{\triangleright}
-\newcommand{\seq}{\rightsquigarrow }
+\newcommand{\seq}{\Rightarrow }
 \newcommand{\sequent}[2]{{#1} \seq {#2}}
 \newcommand{\thmSequent}[2]{{#1} \vdash {#2}}
 
@@ -40,7 +48,7 @@
 \newcommand{\basis}[1]{\mathfrak{#1}}
 % \newcommand{\at}[1]{\mathrm{#1}}
 \newcommand{\at}[1]{{#1}}
-\newcommand{\At}{\mathrm{At}}
+\newcommand{\At}{\mathbb{A}}
 
 %\newcommand{\baseGeq}{\succeq}
 %\newcommand{\baseLeq}{\preceq}
@@ -67,8 +75,8 @@
 \newcommand{\IMLL}{IMLL}
 \newcommand{\IMALL}{IMALL}
 \newcommand{\ILL}{ILL}
-\newcommand{\provesIMALL}{\vdash_{\mathrm{IMALL}}}
-\newcommand{\provesILL}{\vdash_{\mathrm{ILL}}}
+\newcommand{\provesIMALL}{\vdash}
+\newcommand{\provesILL}{\vdash}
 \newcommand{\multiset}{\mathcal{M}}
 \newcommand{\fmultiset}{\mathcal{M}_{\!{f}}}
 \newcommand{\emptymultiset}{\varnothing}
@@ -91,7 +99,7 @@
 \newcommand{\closeaddrule}{\}}
 \newcommand{\Closeaddrule}[2]{\}^{#2}_{#1}}
 \newcommand{\extAt}{\widetilde{\At}}
-\DeclareMathSymbol{\fatcomma}{\mathrel}{bbold}{\lq\,}
+\DeclareMathSymbol{\msetsum}{\mathrel}{bbold}{\lq\,}
 
 %Misc
 \newbox\qqBoxA
