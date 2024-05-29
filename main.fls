@@ -1954,9 +1954,6 @@ INPUT ./banners/uclbannerdarkpurple.pdf
 INPUT ./banners/uclbannerdarkpurple.pdf
 INPUT banners/uclbannerdarkpurple.pdf
 INPUT ./banners/uclbannerdarkpurple.pdf
-INPUT ./banners/uclbannerdarkpurple.pdf
-INPUT banners/uclbannerdarkpurple.pdf
-INPUT ./banners/uclbannerdarkpurple.pdf
 INPUT /usr/local/share/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
 INPUT /usr/local/share/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT /usr/local/share/texmf-dist/fonts/tfm/public/cm/cmss8.tfm

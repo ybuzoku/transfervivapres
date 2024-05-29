@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (Web2C 2023) (preloaded format=pdflatex 2024.4.13)  29 MAY 2024 16:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (Web2C 2023) (preloaded format=pdflatex 2024.4.13)  29 MAY 2024 22:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1178,7 +1178,7 @@ LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
 {/usr/local/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/share/texmf-dist/fonts/enc/dvips/base/8r.enc} <./banners/uclbannerdarkpurple.pdf>]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 48.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 50.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [2
 
@@ -1188,17 +1188,17 @@ Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 48.
 \myCenter1=\dimen393
 \myScoreEnd1=\dimen394
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 145.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 147.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 4.74998pt on input line 145.
+(Font)              scaled to size 4.74998pt on input line 147.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 4.74998pt on input line 145.
+(Font)              scaled to size 4.74998pt on input line 147.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <5> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 145.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 147.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <5> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 145.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 147.
 LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
-(Font)              scaled to size 4.74998pt on input line 145.
+(Font)              scaled to size 4.74998pt on input line 147.
 \myBox2=\box131
 \myScoreStart2=\dimen395
 \myCenter2=\dimen396
@@ -1208,17 +1208,17 @@ LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
 \myCenter3=\dimen399
 \myScoreEnd3=\dimen400
 
-Overfull \hbox (1.31912pt too wide) in paragraph at lines 145--145
+Overfull \hbox (1.31912pt too wide) in paragraph at lines 147--147
  [] 
  []
 
 
-Overfull \vbox (3.08426pt too high) detected at line 145
+Overfull \vbox (3.08426pt too high) detected at line 147
  []
 
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 145.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 147.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
 [3
 
@@ -1229,116 +1229,109 @@ Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 145
 \myScoreEnd4=\dimen403
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 182.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 184.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [4
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 204.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 206.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [5
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 204.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 206.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [6
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 222.
+(Font)              scaled to size 11.39996pt on input line 242.
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 222.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 242.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [7
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 240.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 255.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [8
 
 ]
-File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
-<use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 253.
-(pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
- [9
-
-]
-Overfull \hbox (130.30925pt too wide) detected at line 296
+Overfull \hbox (130.30925pt too wide) detected at line 298
 []
  []
 
 
-Overfull \vbox (10.85167pt too high) detected at line 296
+Overfull \vbox (10.85167pt too high) detected at line 298
  []
 
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 296.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 298.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
-[10
+[9
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <14.4> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 305.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 13.67995pt on input line 305.
+(Font)              scaled to size 13.67995pt on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 305.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 9.49997pt on input line 305.
+(Font)              scaled to size 9.49997pt on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 305.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 6.64998pt on input line 305.
+(Font)              scaled to size 6.64998pt on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 305.
+(Font)              scaled to size 9.49997pt on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 6.64998pt on input line 305.
+(Font)              scaled to size 6.64998pt on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 305.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 305.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
-(Font)              scaled to size 13.67995pt on input line 305.
+(Font)              scaled to size 13.67995pt on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <10> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 305.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <10> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 305.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
-(Font)              scaled to size 9.49997pt on input line 305.
+(Font)              scaled to size 9.49997pt on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <7> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 305.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <7> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 305.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 307.
 LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
-(Font)              scaled to size 6.64998pt on input line 305.
+(Font)              scaled to size 6.64998pt on input line 307.
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 305.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 307.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
- [11
+ [10
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
 Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 316.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
- [12
+ [11
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
 Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 326.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
- [13
+ [12
 
 ]
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
@@ -1347,26 +1340,33 @@ File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
 Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 333.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
- [14
+ [13
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
 Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 345.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
- [15
+ [14
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
 Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 356.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
- [16
+ [15
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
 Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 365.
+(pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
+ [16
+
+]
+File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
+<use banners/uclbannerdarkpurple.pdf>
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 388.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [17
 
@@ -1401,14 +1401,14 @@ Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 388
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 388.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 395.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [22
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 395.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 409.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [23
 
@@ -1422,7 +1422,7 @@ Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 409
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 409.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 422.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [25
 
@@ -1450,58 +1450,51 @@ Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 422
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 422.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 448.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [29
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 451.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 448.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [30
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 451.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 461.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [31
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 451.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 474.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [32
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 451.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 483.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [33
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 463.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 494.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [34
 
 ]
 File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
 <use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 475.
+Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 500.
 (pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
  [35
-
-]
-File: banners/uclbannerdarkpurple.pdf Graphic file (type pdf)
-<use banners/uclbannerdarkpurple.pdf>
-Package pdftex.def Info: banners/uclbannerdarkpurple.pdf  used on input line 483.
-(pdftex.def)             Requested size: 364.19536pt x 29.02217pt.
- [36
 
 ]
 \tf@nav=\write8
@@ -1522,18 +1515,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2B63C78A363EEF6E9934D0AA4251B769;918.
  ) 
 Here is how much of TeX's memory you used:
- 36595 strings out of 476000
- 742905 string characters out of 5793088
- 1880433 words of memory out of 5000000
- 56162 multiletter control sequences out of 15000+600000
+ 36585 strings out of 476000
+ 742653 string characters out of 5793088
+ 1879433 words of memory out of 5000000
+ 56154 multiletter control sequences out of 15000+600000
  562422 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,3271b,702s stack positions out of 10000i,2500n,20000p,300000b,200000s
+ 128i,15n,122p,3271b,708s stack positions out of 10000i,2500n,20000p,300000b,200000s
 </usr/local/share/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/share/texmf-dist/fonts/type1/public/bbold-type1/bbold5.pfb></usr/local/share/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/share/texmf-dist/fonts/type1/public/rsfs/rsfs5.pfb></usr/local/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on main.pdf (36 pages, 182201 bytes).
+Output written on main.pdf (35 pages, 181069 bytes).
 PDF statistics:
- 392 PDF objects out of 1000 (max. 8388607)
- 298 compressed objects within 3 object streams
- 77 named destinations out of 1000 (max. 500000)
+ 386 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
+ 75 named destinations out of 1000 (max. 500000)
  85 words of extra memory for PDF output out of 10000 (max. 10000000)
 

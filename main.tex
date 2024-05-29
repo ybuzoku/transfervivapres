@@ -43,6 +43,8 @@
 \begin{frame}{Goals for this talk}
 \begin{itemize}
 \item To cover the work done in obtaining a proof-theoretic semantics for ILL.
+\item To some interesting aspects of the results obtained.
+\item To present an alternative semantics for ILL.
 \item To discuss my future plans for my PhD.
 \end{itemize}
 \end{frame}
@@ -204,27 +206,27 @@
 	\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Weakening and Contraction derivability}
-	\begin{proof}
-	It follows immediately by setting $n=1$ and $m=2$ for contraction and $m=0$ for weakening in the introduction rule, $\psi = \varphi$ and $\Delta = \bang \varphi$ that 
-	\begin{prooftree}
-	\AxiomC{$(\bang\varphi)^m, \Gamma \proves \chi$}
-	\AxiomC{$\bang\varphi \proves \bang\varphi$}
-	\AxiomC{$\bang\varphi \proves \bang\varphi$}
-	\AxiomC{$\varphi \proves \varphi$}
-	\RightLabel{$\bang$E}
-	\BinaryInfC{$\bang\varphi \proves \varphi$}
-	\RightLabel{$\bang$I}
-	\TrinaryInfC{$\Gamma,\bang \varphi\proves\chi$}
-	\end{prooftree}
-	\end{proof}
+%\begin{frame}{Weakening and Contraction derivability}
+%	\begin{proof}
+%	It follows immediately by setting $n=1$ and $m=2$ for contraction and $m=0$ for weakening in the introduction rule, $\psi = \varphi$ and $\Delta = \bang \varphi$ that 
+%	\begin{prooftree}
+%	\AxiomC{$(\bang\varphi)^m, \Gamma \proves \chi$}
+%	\AxiomC{$\bang\varphi \proves \bang\varphi$}
+%	\AxiomC{$\bang\varphi \proves \bang\varphi$}
+%	\AxiomC{$\varphi \proves \varphi$}
+%	\RightLabel{$\bang$E}
+%	\BinaryInfC{$\bang\varphi \proves \varphi$}
+%	\RightLabel{$\bang$I}
+%	\TrinaryInfC{$\Gamma,\bang \varphi\proves\chi$}
+%	\end{prooftree}
+%	\end{proof}
+%\end{frame}
 	
-	\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Approaching substructurality in Base-extention Semantics}
 \begin{frame}{Substructural atomic derivability}
-\begin{definition}{Atomic rules}
+\begin{definition}[Basic rules]
 Basic rules take the following form: 
 \[\openaddrule (\at{P}_{1_i} \seq \at{q}_{1_i})\closeaddrule^{l_1}_{i=1}, \dots, \openaddrule (\at{P}_{n_i} \seq \at{q}_{n_i})\closeaddrule^{l_n}_{i=1} \Rightarrow \at{r}\]
 where 
@@ -309,8 +311,6 @@ Then $\at{C}_{1}\msetsum\dots\msetsum\at{C}_{n}\deriveBaseM{\baseB} r$.
 	\begin{itemize}
 	\item If $\suppM{\baseB}{L}\varphi$ then for all $\baseC \baseGeq \baseB$ we have $\suppM{\baseC}{L}\varphi$.
 	\vspace{5pt}
-	\item $\suppM{\baseB}{L}\varphi$  iff $\suppM{\baseB}{L}\varphi\mand\mtop$ iff $\suppM{\baseB}{L}\varphi\msetsum\mtop$
-	\vspace{5pt}
 	\item Given $\Gamma\suppM{\baseB}{L}\varphi$ and $\suppM{\baseB}{K}\Gamma$, then it holds that $\suppM{\baseB}{L\msetsum K}\varphi$.
 	\end{itemize}
 \end{frame}
@@ -328,13 +328,13 @@ Then $\at{C}_{1}\msetsum\dots\msetsum\at{C}_{n}\deriveBaseM{\baseB} r$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Why the extension to Inf?}
 	\begin{center}
-		\textbf{Are we still inferentialist?}
+		\textbf{Question: Is this still an inferentialist semantics?}
 	\end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Including the exponential}
-\begin{frame}{Can we understand the exponential better?}
+\begin{frame}{Can we better understand the exponential?}
 \begin{itemize}	
 	\item $\bang \varphi \suppM{}{} \varphi\mand\dots\mand\varphi$
 	%
@@ -413,7 +413,7 @@ So ultimately, $\suppM{\baseB}{\emptymultiset}p\mand \ldots \mand p$.
 \begin{itemize}
 \item The most convincing hypothesis was that $\suppM{\baseB}{L}\bang\varphi$ iff $L = \emptymultiset$ and for all $\baseC \baseGeq \baseB$, atomic multisets $K$ and atoms $p$, if $\varphi\suppM{\baseC}{K}p$ then $\suppM{\baseC}{K}p$.
 \pause
-\item This however fails to be complete as it requires us to be able to prove from $L \deriveBaseM{\baseB} \flatIMALL{(\bang \varphi)}$ that $L = \emptymultiset$, to pass Proposition 31 from the report.
+\item This however fails to be complete as it requires us to be able to prove from $L \deriveBaseM{\baseB} \flatIMALL{(\bang \varphi)}$ that $L = \emptymultiset$, to pass Proposition 31.
 \pause
 \item Attempts to generalise this by replacing $L=\emptymultiset$ with $\suppM{\baseB}{\emptymultiset}L$ fail for the same reason.
 \pause
@@ -421,16 +421,13 @@ So ultimately, $\suppM{\baseB}{\emptymultiset}p\mand \ldots \mand p$.
 \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{The idea of a zoned semantics}
 \begin{center}
 \begin{itemize}
-\item We want to re-introduce, in a controlled manner, the ability for normal intuitionistic inferences to be held valid. 
-\pause
 \item Not absurd to distinguish basic sentences based on whether they are to be used as a hypothesis in an intuitionistic or a resourceful way. 
 \pause
-\item The distinction \emph{must} however be made by the formula consequence relation.
-\pause
-\item Thus a basic rule might look something like the following:
+\item Thus we define a new type of basic rule that lookds something like this:
 \begin{prooftree}
 \AxiomC{$[P_1;C_1]$}
 \noLine
@@ -450,17 +447,19 @@ So ultimately, $\suppM{\baseB}{\emptymultiset}p\mand \ldots \mand p$.
 \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Exploring the zoned semantics}
 	\begin{definition}[Zoned basic derivability relation]
 		The relation of derivability in a base $\baseB$, is defined inductively as so:
 		\begin{itemize}
 		\item[Ref] $S;T \deriveBaseM{\baseB} p$ iff ($p \in S$ and $T=\emptymultiset$) or $T=[p]$.
 		\item[App] Given that $(\openaddrule(P_{1_i};C_{1_i} \seq q_{1_{i}})\Closeaddrule{i=1}{l_1},\dots,\openaddrule(P_{n_i};C_{n_i} \seq q_{n_{i}}) \Closeaddrule{i=1}{l_n} \Rightarrow \at{r}) \in \baseB$ and atomic multisets $G$ and $\at{C}_i$ such that the following hold:
-				\[G,P_{i_j};L_i, C_{i_j} \deriveBaseM{\baseB} \at{q}_{i_j} \text{ for all } i = 1,\dots, n \text{ and } j = 1,\dots,l_i\]
-		Then $G;L_{1},\dots,L_{n}\deriveBaseM{\baseB} r$. 
+				\[G\msetsum P_{i_j};L_i\msetsum C_{i_j} \deriveBaseM{\baseB} \at{q}_{i_j} \text{ for all } i = 1,\dots, n \text{ and } j = 1,\dots,l_i\]
+		Then $G;L_{1}\msetsum\dots\msetsum L_{n}\deriveBaseM{\baseB} r$. 
 		\end{itemize}
 	\end{definition}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Exploring the zoned semantics}
 \begin{itemize}
@@ -468,13 +467,31 @@ So ultimately, $\suppM{\baseB}{\emptymultiset}p\mand \ldots \mand p$.
 \vspace{0.3cm}
 \item $\suppM{\baseB}{G;L}\Gamma\msetsum\Delta$ iff there exists $L=U\msetsum V$ such that $\suppM{\baseB}{G;U}\Gamma$ and $\suppM{\baseB}{G;V}\Delta$
 \vspace{0.3cm}
-\item $\suppM{\baseB}{G;L} \bang\varphi$ iff for every base $\baseC \baseGeq \baseB$, atomic multiset $K$ and atom $p,$ such that $\varphi;\cdot \suppM{\baseC}{G; K} p$ hold, then $\suppM{\baseC}{G; L\msetsum K}p$.
+\item $\suppM{\baseB}{G;L} \bang\varphi$ iff for every base $\baseC \baseGeq \baseB$, atomic multisets $h,K$ and atom $p,$ such that $\varphi;\cdot \suppM{\baseC}{H; K} p$ hold, then $\suppM{\baseC}{G\msetsum H; L\msetsum K}p$.
 \vspace{0.3cm}
-\item Seems to suggest a want for a Lolli-like encoding of sequents i.e. $(\bang \Gamma, \Delta: \varphi) \mapsto \Gamma;\Delta \Vdash \varphi$, as it is still difficult to encode the $\bang$I rule.
+\item $\Gamma;\Delta\suppM{\baseB}{G;L}\varphi$ iff for every $\baseC \baseGeq \baseB$ and atomic multisets $H,K$ such that $\suppM{\baseC}{H;\emptymultiset}\Gamma$ and $\suppM{\baseC}{G\msetsum H;L\msetsum K}\Delta$ then $\suppM{\baseC}{G\msetsum H;L\msetsum K}\varphi$
 \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Some other work undertaken}
+	\begin{itemize}
+		\item Investigated alternative IPL support relations that are more ``resource''-aware.
+		\item Started investigating translations between Sandqvist's semantics for IPL and the semantics presented here for ILL.
+		\item Very recently, I have been working on a Base-extension semantics for Lambek Calculus.
+	\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Future directions of work}
+	\begin{itemize}
+		\item Study how rules are generally translated from Sandqvists bases for IPL to the bases I presented here.
+		\item Give a Proof-theoretic Semantics for Classical Linear Logic.
+		\item Similarly, study other similar logics such as DILL, FILL and what happens when we have subexponentials.
+		\item Give a categorical interpretation of the semantics presented herein.
+		\item Investigate the connection to Linear Logic programming.
+		\item Develop a connection to the Kripke semantics of Miller for his fragment of ILL.
+	\end{itemize}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Thank you!}
 \begin{center}
