@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1717019844 "/home/ybu/PhD/Presentations/upgradepres/main.tex" "main.pdf" "main" 1717019846 0
-  "/home/ybu/PhD/Presentations/upgradepres/main.tex" 1717019845 22567 09b9ac49b8a140baf9424f9078d8f4fa ""
+["pdflatex"] 1717021227 "/home/ybu/PhD/Presentations/upgradepres/main.tex" "main.pdf" "main" 1717021228 0
+  "/home/ybu/PhD/Presentations/upgradepres/main.tex" 1717021226 22665 25b8376ed6f1b05dac1e4f9f38e4b4dd ""
   "/usr/local/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/share/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map" 1666223497 4609045 74543da1ab9350ba886fce0af49a2cfd ""
@@ -367,9 +367,9 @@
   "beamerthemeucl.sty" 1702041779 5055 b62e6785a304721d3f989a27dc05f1b1 ""
   "local.tikzstyles" 1702041779 2575 43265ac184ec14a519782263afe4cdd9 ""
   "macro.tex" 1716987725 3487 7ce7e3a04c76da0fc2fadd8373891d33 ""
-  "main.aux" 1717019846 5352 e077195e4de226cec08b5fe48217ed47 "pdflatex"
-  "main.nav" 1717019846 3313 c3c16c118663516e9dcc045e2ddac639 "pdflatex"
-  "main.out" 1717019846 918 2b63c78a363eef6e9934d0aa4251b769 "pdflatex"
+  "main.aux" 1717021228 5352 e077195e4de226cec08b5fe48217ed47 "pdflatex"
+  "main.nav" 1717021228 3313 c3c16c118663516e9dcc045e2ddac639 "pdflatex"
+  "main.out" 1717021228 918 2b63c78a363eef6e9934d0aa4251b769 "pdflatex"
   "package.tex" 1716990303 1188 3bb6323fd8c34b233ceabfcca130de2d ""
   "tikzit.sty" 1702041779 1622 48e2ab9b1608a574484cf706c0197ffe ""
   "uclcolors.sty" 1702041779 1170 d28b48343d84047961267efcb5712942 ""
