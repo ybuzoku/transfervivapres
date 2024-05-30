@@ -1,3 +1,0 @@
-\beamer@sectionintoc {2}{Approaching substructurality in Base-extention Semantics}{7}{0}{1}
-\beamer@sectionintoc {3}{Base-extension Semantics for IMALL}{9}{0}{2}
-\beamer@sectionintoc {4}{Including the exponential}{14}{0}{3}
