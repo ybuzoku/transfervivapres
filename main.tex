@@ -401,12 +401,14 @@ So ultimately, $\suppM{\baseB}{\emptymultiset}p\mand \ldots \mand p$.
 \begin{frame}{A proof-theoretic flavour of the $\bang$}
 	We now consider the second identity: $\suppM{\baseB}{L}\bang(\varphi\aand\psi)$ iff $\suppM{\baseB}{L}\bang\varphi \mand \bang\psi$
 	with $\psi = \top$. Furthermore since $\varphi\aand\top \equiv \varphi$ we go as follows:
-	\begin{align}
+	\begin{align*}
 		\suppM{\baseB}{L}\bang\varphi &\text{ iff } \suppM{\baseB}{L}\bang\varphi \mand \bang\top \\
 		&\text{ iff for all } \baseC\baseGeq\baseB, K \text{ and } p\in\At,\bang\varphi\msetsum\bang\top\suppM{\baseC}{K}p\text{ implies }\suppM{\baseC}{L\msetsum K}p\\
-		&\text{ iff for all } \baseC\baseGeq\baseB, K \text{ and } p\in\At,\bang\varphi\suppM{\baseC}{K}p\text{ implies }\suppM{\baseC}{L\msetsum K}p\\
-		&\text{ iff for all } \baseC\baseGeq\baseB, K \text{ and } p\in\At,\bang\varphi\suppM{\baseC}{K}p\text{ implies }\suppM{\baseC}{L\msetsum K}p
-	\end{align}
+		&\text{ iff for all } \baseC\baseGeq\baseB, K \text{ and } p\in\At, \\
+		&\text{ if } (\text{ for all }  \baseD\baseGeq\baseC,\text{ if }\suppM{\baseD}{\emptymultiset}\varphi\text{ and }\suppM{\baseD}{\emptymultiset}\top\text{ then }\suppM	{\baseD}{K}p)\text{ then }\suppM{\baseC}{L\msetsum K}\\
+		&\text{ iff for all } \baseC\baseGeq\baseB, K \text{ and } p\in\At, \\
+		&\text{ if } (\text{ for all }  \baseD\baseGeq\baseC,\text{ if }\suppM{\baseD}{\emptymultiset}\varphi\text{ then }\suppM	{\baseD}{K}p)\text{ then }\suppM{\baseC}{L\msetsum K}
+	\end{align*}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
